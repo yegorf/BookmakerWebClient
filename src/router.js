@@ -1,23 +1,30 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import LoginForm from "./components/autorization/LoginForm";
+import EventPanel from "./components/events/EventPanel";
+import RegistrationForm from "./components/autorization/RegistrationForm";
+import Directories from "./components/directories/Directories";
+import SportForm from "./components/directories/SportForm";
+import TeamForm from "./components/directories/TeamForm";
+import AddEventForm from "./components/events/AddEventForm";
+import StartPageAdmin from "./components/main_pages/StartPageAdmin";
+import StartPage from "./components/main_pages/StartPage";
+import StartPageUser from "./components/main_pages/StartPageUser";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+    {path: '/login', component: LoginForm},
+    {path: '/registration', component: RegistrationForm},
+    {path: '/', component: StartPage},
+
+    {path: '/directories', component: Directories},
+    {path: '/sports', component: SportForm},
+    {path: '/teams', component: TeamForm},
+
+    {path: '/events', component: AddEventForm},
+    {path: '/admin', component: StartPageAdmin},
+    {path: '/user', component: StartPageUser}
   ]
 })
