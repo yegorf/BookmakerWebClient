@@ -21,6 +21,8 @@
             }
         },
         async created() {
+            alert(localStorage.getItem("user"));
+
             axios.post('/users/getUser', null, {
                 params: {
                     name: this.$store.state.user

@@ -33,6 +33,8 @@
                         this.$store.commit("setUser", user.name);
                         this.$store.commit("setAccess", user.admin);
 
+                        localStorage.setItem("user", user.name);
+                        localStorage.setItem("access", user.admin);
 
                         if(this.$store.state.access == '0') {
                             this.$router.push({path: '/user'});
