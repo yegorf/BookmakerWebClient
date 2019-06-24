@@ -33,6 +33,7 @@
                         this.$store.commit("setUser", user.name);
                         this.$store.commit("setAccess", user.admin);
 
+
                         if(this.$store.state.access == '0') {
                             this.$router.push({path: '/user'});
                         } else if(this.$store.state.access == '1') {

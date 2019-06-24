@@ -11,6 +11,7 @@ import StartPageAdmin from "./components/main_pages/StartPageAdmin";
 import StartPage from "./components/main_pages/StartPage";
 import StartPageUser from "./components/main_pages/StartPageUser";
 import UsersPanel from "./components/user_info/UsersPanel";
+import UserAccount from "./components/user_account/UserAccount";
 
 Vue.use(Router);
 
@@ -28,6 +29,8 @@ export default new Router({
     {path: '/admin', component: StartPageAdmin},
     {path: '/user', component: StartPageUser},
 
-    {path: '/users', component: UsersPanel}
+    {path: '/users', component: UsersPanel},
+
+    {path: '/userAccount', component: UserAccount}
   ]
 })
