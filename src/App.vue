@@ -1,15 +1,5 @@
 <template>
   <div id="app">
-<!--      <div id="nav">-->
-<!--        <ul class="mainMenu">-->
-<!--          <li><router-link class="rl" to="/">Main</router-link></li>-->
-<!--          <li><router-link class="rl" to="/login">Login</router-link></li>-->
-<!--          <li><router-link class="rl" to="/registration">Registration</router-link></li>-->
-<!--          <li><router-link class="rl" to="/directories">Directories</router-link></li>-->
-<!--            <li><router-link class="rl" to="/events">Events</router-link></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--      <router-view/>-->
       <router-view/>
   </div>
 </template>
@@ -64,7 +54,12 @@
 <script>
 
   import StartPage from "./components/main_pages/StartPage";
+
   export default {
-      components: {StartPage}
+      components: {StartPage},
+      async created() {
+          console.log(this.$store.state.user);
+          console.log(this.$store.state.access);
+      }
   }
 </script>

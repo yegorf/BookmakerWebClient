@@ -6,6 +6,7 @@
         <b>Password</b><br>
         <input type="text" ref="passwordInput"><br>
         <button @click="enter">Enter</button>
+        <br>
     </div>
 </template>
 
@@ -20,16 +21,23 @@
                 const password = this.$refs.passwordInput.value;
 
                 axios.post('/users/login', null, {
-                    params : {
+                    params: {
                         username,
                         password
                     }
                 }).then(res => {
-                    alert(res.data);
-                    if(res.data == '0') {
-                        this.$router.push({path: '/user'});
-                    } else if(res.data == '1') {
-                        this.$router.push({path: '/admin'});
+                    const user = res.data;
+                    if(user.message != null) {
+                        alert(user.message);
+                    } else {
+                        this.$store.commit("setUser", user.name);
+                        this.$store.commit("setAccess", user.admin);
+
+                        if(this.$store.state.access == '0') {
+                            this.$router.push({path: '/user'});
+                        } else if(this.$store.state.access == '1') {
+                            this.$router.push({path: '/admin'});
+                        }
                     }
                 });
             }

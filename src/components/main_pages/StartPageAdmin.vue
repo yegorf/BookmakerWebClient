@@ -5,6 +5,7 @@
                 <li><router-link class="rl" to="/admin">Main</router-link></li>
                 <li><router-link class="rl" to="/directories">Directories</router-link></li>
                 <li><router-link class="rl" to="/events">Events</router-link></li>
+                <li><router-link class="rl" to="/users">Users</router-link></li>
             </ul>
         </div>
         <EventPanel />

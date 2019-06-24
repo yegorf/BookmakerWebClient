@@ -10,6 +10,7 @@ import AddEventForm from "./components/events/AddEventForm";
 import StartPageAdmin from "./components/main_pages/StartPageAdmin";
 import StartPage from "./components/main_pages/StartPage";
 import StartPageUser from "./components/main_pages/StartPageUser";
+import UsersPanel from "./components/user_info/UsersPanel";
 
 Vue.use(Router);
 
@@ -25,6 +26,8 @@ export default new Router({
 
     {path: '/events', component: AddEventForm},
     {path: '/admin', component: StartPageAdmin},
-    {path: '/user', component: StartPageUser}
+    {path: '/user', component: StartPageUser},
+
+    {path: '/users', component: UsersPanel}
   ]
 })
