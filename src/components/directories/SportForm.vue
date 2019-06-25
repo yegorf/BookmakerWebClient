@@ -1,5 +1,6 @@
 <template>
     <div>
+        <AdminMenu />
         <b>Sport name</b><br>
         <input type="text" ref="sportInput">
         <br>
@@ -11,9 +12,11 @@
 
 <script>
     import axios from 'axios/index';
+    import AdminMenu from "../menues/AdminMenu";
 
     export default {
         name: "SportForm",
+        components: {AdminMenu},
         data() {
             return {
                 sports: null

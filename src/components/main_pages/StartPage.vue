@@ -1,21 +1,16 @@
 <template>
     <div>
-    <div id="nav">
-        <ul class="mainMenu">
-            <li><router-link class="rl" to="/">Main</router-link></li>
-            <li><router-link class="rl" to="/login">Login</router-link></li>
-            <li><router-link class="rl" to="/registration">Registration</router-link></li>
-        </ul>
-    </div>
+        <VisitorMenu />
         <EventPanel />
     </div>
 </template>
 
 <script>
     import EventPanel from "../events/EventPanel";
+    import VisitorMenu from "../menues/VisitorMenu";
     export default {
         name: "StartPage",
-        components: {EventPanel},
+        components: {VisitorMenu, EventPanel},
         async created() {
             if(localStorage.getItem("access") == '0') {
                 this.$router.push({path: '/user'});

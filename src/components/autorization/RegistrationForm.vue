@@ -1,5 +1,7 @@
 <template>
     <div>
+        <VisitorMenu />
+
         <b>Registration</b><br>
         <b>Username</b><br>
         <input type="text" ref="usernameInput"><br>
@@ -13,9 +15,12 @@
 
 <script>
     import axios from 'axios/index';
+    import UserMenu from "../menues/UserMenu";
+    import VisitorMenu from "../menues/VisitorMenu";
 
     export default {
         name: "RegistrationForm",
+        components: {VisitorMenu, UserMenu},
         methods: {
             enter() {
                 const username = this.$refs.usernameInput.value;

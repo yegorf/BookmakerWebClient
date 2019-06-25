@@ -22,6 +22,7 @@
 
 <style scoped>
     .event {
-
+        width: 200px;
+        color: coral;
     }
 </style>

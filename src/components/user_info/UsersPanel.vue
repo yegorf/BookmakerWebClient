@@ -1,5 +1,6 @@
 <template>
     <div>
+        <AdminMenu />
         <div v-for="user in users">
             <b>Username: </b>{{user.name}}
             <b>Email: </b>{{user.email}}
@@ -11,9 +12,11 @@
 
 <script>
     import axios from 'axios';
+    import AdminMenu from "../menues/AdminMenu";
 
     export default {
         name: "UserPanel",
+        components: {AdminMenu},
         data() {
             return {
                 users: []

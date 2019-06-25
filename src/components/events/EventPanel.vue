@@ -28,6 +28,6 @@
 
 <style scoped>
     #main {
-        background: lightgreen;
+        background: coral;
     }
 </style>

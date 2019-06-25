@@ -1,5 +1,6 @@
 <template>
     <div>
+        <UserMenu />
         <div>Username: {{this.user.name}}</div><br>
         <div>Email: {{this.user.email}}</div><br>
         <b>Balance: {{this.user.balance}}</b>
@@ -11,9 +12,13 @@
 
 <script>
     import axios from 'axios';
+    import UserMenu from '../menues/UserMenu';
 
     export default {
         name: "UserAccount",
+        components: {
+            UserMenu
+        },
         data() {
             return {
                 user: null,

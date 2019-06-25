@@ -1,5 +1,7 @@
 <template>
     <div>
+        <AdminMenu />
+
         <b>Choose sport</b><br>
         <select v-model="selectedSport">
             <option v-for="sport in sports" v-bind:value="sport.id">{{sport.sport}}</option>
@@ -30,9 +32,11 @@
 
 <script>
     import axios from 'axios/index';
+    import AdminMenu from "../menues/AdminMenu";
 
     export default {
         name: "AddEventForm",
+        components: {AdminMenu},
         data: function () {
             return {
                 sports : null,

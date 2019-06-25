@@ -1,5 +1,6 @@
 <template>
     <div>
+        <AdminMenu />
         <b>Team name</b><br>
         <input type="text" ref="team">
         <br>
@@ -15,9 +16,11 @@
 
 <script>
     import axios from 'axios';
+    import AdminMenu from "../menues/AdminMenu";
 
     export default {
         name: "TeamForm",
+        components: {AdminMenu},
         data() {
             return {
                 teams: null
