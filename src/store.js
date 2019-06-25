@@ -8,7 +8,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         user: null,
-        access: null
+        access: null,
+        event: null
     },
 
     plugins: [createPersistedState({
@@ -25,6 +26,9 @@ export default new Vuex.Store({
         },
         setAccess (state, access) {
             state.access = access;
+        },
+        setEvent (state, event) {
+            state.event = event;
         }
     },
 

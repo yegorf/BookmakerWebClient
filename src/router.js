@@ -12,6 +12,7 @@ import StartPage from "./components/main_pages/StartPage";
 import StartPageUser from "./components/main_pages/StartPageUser";
 import UsersPanel from "./components/user_info/UsersPanel";
 import UserAccount from "./components/user_account/UserAccount";
+import MakeBets from "./components/events/MakeBets";
 
 Vue.use(Router);
 
@@ -31,6 +32,7 @@ export default new Router({
 
     {path: '/users', component: UsersPanel},
 
-    {path: '/userAccount', component: UserAccount}
+    {path: '/userAccount', component: UserAccount},
+    {path: '/makingBets', component: MakeBets}
   ]
 })

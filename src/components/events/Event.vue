@@ -1,17 +1,22 @@
 <template>
-    <div class="event">
-        {{event.sport}}<br>
-        {{event.team1}} VS {{event.team2}} <br>
-        {{event.date}}
-        <br>
-        <br>
+    <div class="event" @click="choose">
+        <router-link class="rl" to="/makingBets">
+            {{event.sport}}<br>
+            {{event.team1}} VS {{event.team2}} <br>
+            {{event.date}}
+        </router-link>
     </div>
 </template>
 
 <script>
     export default {
         name: "Event",
-        props: ['event']
+        props: ['event'],
+        methods: {
+            choose() {
+                this.$store.commit('setEvent', this.event.id)
+            }
+        }
     }
 </script>
 

@@ -1,6 +1,11 @@
 <template>
     <div>
-        <div v-for="user in users">{{user.username}}</div>
+        <div v-for="user in users">
+            <b>Username: </b>{{user.name}}
+            <b>Email: </b>{{user.email}}
+            <b>Access level: </b>{{user.admin}}
+        </div>
+        <br>
     </div>
 </template>
 
@@ -16,8 +21,8 @@
         },
         async created() {
             const users = await axios.get('users/getUsers');
-           // this.users = users;
-            console.log(users);
+            this.users = users.data;
+            console.log(this.users);
         }
     }
 </script>
