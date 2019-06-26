@@ -1,10 +1,12 @@
 <template>
     <div>
         <AdminMenu />
-        <div v-for="user in users">
-            <b>Username: </b>{{user.name}}
-            <b>Email: </b>{{user.email}}
-            <b>Access level: </b>{{user.admin}}
+        <div class="usersPanel">
+            <div v-for="user in users">
+                <b>Username: </b>{{user.name}}
+                <b>Email: </b>{{user.email}}
+                <b>Access level: </b>{{user.admin}}
+            </div>
         </div>
         <br>
     </div>
@@ -31,5 +33,8 @@
 </script>
 
 <style scoped>
-
+.usersPanel {
+    background: darkseagreen;
+    width: 50%;
+}
 </style>

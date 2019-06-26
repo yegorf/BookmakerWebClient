@@ -1,12 +1,21 @@
 <template>
     <div>
         <AdminMenu />
-        <b>Sport name</b><br>
-        <input type="text" ref="sportInput">
-        <br>
-        <button @click="enter">Save</button>
-        <br>
-        <div v-for="sport in sports">{{sport.sport}}<br></div>
+        <div class="addSport">
+            <b>Sport name</b><br>
+            <input type="text" ref="sportInput">
+            <br>
+            <button @click="enter">Save</button>
+            <br>
+            <div v-for="sport in sports">{{sport.sport}}<br></div>
+        </div>
+        <div class="deleteSport">
+            <b>Sport name</b><br>
+            <select v-model="selectSport">
+                <option v-for="sport in sports" v-bind:value="sport.id">{{sport.sport}}</option>
+            </select>
+            <button @click="remove">Enter</button>
+        </div>
     </div>
 </template>
 
@@ -19,7 +28,8 @@
         components: {AdminMenu},
         data() {
             return {
-                sports: null
+                sports: null,
+                selectSport: null
             }
         },
         async created() {
@@ -36,11 +46,31 @@
                 }).then(res => {
                     alert(res.data);
                 });
+            },
+            remove() {
+                const sport = this.selectSport;
+                axios.post('/directories/removeSport', null, {
+                    params: {
+                        sport
+                    }
+                });
             }
         }
     }
 </script>
 
 <style scoped>
-
+.addSport {
+    width: 40%;
+    background: darkseagreen;
+    float: left;
+    margin-left: 5%;
+}
+.deleteSport {
+    width: 40%;
+    background: lightgreen;
+    float: left;
+    margin-left: 10%;
+    margin-right: 5%;
+}
 </style>

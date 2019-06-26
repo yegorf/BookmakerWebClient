@@ -12,6 +12,7 @@
             <li><router-link class="rl" to="/events">Events</router-link></li>
             <li><router-link class="rl" to="/users">Users</router-link></li>
 <!--            <li><b class="username">{{this.$store.state.user}}</b></li>-->
+            <li><router-link class="rl" to="/transactions">Transactions</router-link></li>
             <li><router-link class="rl" to="/login">Log out</router-link></li>
         </ul>
     </div>
@@ -25,7 +26,7 @@
 
 <style scoped>
     #nav {
-        margin: 100px 0;
+        margin-bottom: 100px;
         background-color: #3cd070;
     }
 

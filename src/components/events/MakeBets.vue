@@ -8,7 +8,7 @@
         </div>
     </div>
 </template>
-<!--ERROR-->
+
 <script>
     import axios from 'axios';
 

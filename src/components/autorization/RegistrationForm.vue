@@ -1,15 +1,16 @@
 <template>
     <div>
         <VisitorMenu />
-
-        <b>Registration</b><br>
-        <b>Username</b><br>
-        <input type="text" ref="usernameInput"><br>
-        <b>Password</b><br>
-        <input type="text" ref="passwordInput"><br>
-        <b>Email</b><br>
-        <input type="text" ref="emailInput"><br>
-        <button @click="enter">Enter</button>
+        <div class="registration" >
+            <b>Registration</b><br>
+            <b>Username</b><br>
+            <input type="text" ref="usernameInput"><br>
+            <b>Password</b><br>
+            <input type="text" ref="passwordInput"><br>
+            <b>Email</b><br>
+            <input type="text" ref="emailInput"><br>
+            <button @click="enter">Enter</button>
+        </div>
     </div>
 </template>
 
@@ -42,5 +43,10 @@
 </script>
 
 <style scoped>
-
+    .registration {
+        background: seagreen;
+        width: 40%;
+        margin-left: 30%;
+        padding: 20px;
+    }
 </style>

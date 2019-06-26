@@ -7,6 +7,7 @@
 <style>
     html {
         background: #cfdfcf;
+        font-family: Arial;
     }
 </style>
 

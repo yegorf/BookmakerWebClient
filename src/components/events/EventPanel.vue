@@ -1,5 +1,5 @@
 <template>
-    <div id="main">
+    <div id="panel">
         <Event v-for="event in events" :id="event.id" :event="event" />
     </div>
 </template>
@@ -27,7 +27,8 @@
 </script>
 
 <style scoped>
-    #main {
+    #panel {
         background: coral;
+        width: 100%;
     }
 </style>

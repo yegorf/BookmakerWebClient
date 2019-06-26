@@ -16,7 +16,7 @@
 
 <style scoped>
     #nav {
-        margin: 100px 0;
+        margin-bottom: 100px;
         background-color: #3cd070;
     }
 

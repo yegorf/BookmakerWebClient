@@ -8,9 +8,10 @@ import AddEventForm from "./components/events/AddEventForm";
 import StartPageAdmin from "./components/main_pages/StartPageAdmin";
 import StartPage from "./components/main_pages/StartPage";
 import StartPageUser from "./components/main_pages/StartPageUser";
-import UsersPanel from "./components/user_info/UsersPanel";
-import UserAccount from "./components/user_account/UserAccount";
+import UsersPanel from "./components/admin/UsersPanel";
+import UserAccount from "./components/user/UserAccount";
 import MakeBets from "./components/events/MakeBets";
+import TransactionForm from "./components/admin/TransactionForm";
 
 Vue.use(Router);
 
@@ -30,6 +31,7 @@ export default new Router({
     {path: '/users', component: UsersPanel},
 
     {path: '/userAccount', component: UserAccount},
-    {path: '/makingBets', component: MakeBets}
+    {path: '/makingBets', component: MakeBets},
+    {path: '/transactions', component: TransactionForm}
   ]
 })

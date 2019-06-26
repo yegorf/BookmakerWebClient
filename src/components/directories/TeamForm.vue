@@ -1,16 +1,25 @@
 <template>
     <div>
         <AdminMenu />
-        <b>Team name</b><br>
-        <input type="text" ref="team">
-        <br>
+        <div class="addForm">
+            <b>Team name</b><br>
+            <input type="text" ref="team">
+            <br>
 
-        <b>Some information</b><br>
-        <textarea ref="info"></textarea>
-        <br>
-        <button @click="enter">Save</button>
-        <br>
-        <div v-for="team in teams">{{team.team}}<br></div>
+            <b>Some information</b><br>
+            <textarea ref="info"></textarea>
+            <br>
+            <button @click="enter">Save</button>
+            <br>
+            <div v-for="team in teams">{{team.name}}<br></div>
+        </div>
+        <div class="removeForm">
+            <b>Remove team</b><br>
+            <select v-model="selectTeam">
+                <option v-for="team in teams" v-bind:value="team.id">{{team.name}}</option>
+            </select>
+            <button @click="remove">Remove</button>
+        </div>
     </div>
 </template>
 
@@ -23,11 +32,14 @@
         components: {AdminMenu},
         data() {
             return {
-                teams: null
+                teams: [],
+                selectTeam: this
             }
         },
         async created() {
-            this.teams = await axios.get('/directories/getTeams');
+            const teamsData = await axios.get('/directories/getTeams');
+            this.teams = teamsData.data;
+            console.log(this.teams);
         },
         methods: {
             enter() {
@@ -40,11 +52,30 @@
                         info
                     }
                 })
+            },
+            remove() {
+                axios.post('/directories/removeTeam', null, {
+                    params: {
+                        team: this.selectTeam
+                    }
+                })
             }
         }
     }
 </script>
 
 <style scoped>
-
+.addForm {
+    background: darkseagreen;
+    width: 40%;
+    margin-left: 5%;
+    float: left;
+}
+.removeForm {
+    background: lightgreen;
+    width: 40%;
+    margin-left: 10%;
+    margin-right: 5%;
+    float: left;
+}
 </style>

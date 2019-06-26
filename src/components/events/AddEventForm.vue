@@ -2,31 +2,36 @@
     <div>
         <AdminMenu />
 
-        <b>Choose sport</b><br>
-        <select v-model="selectedSport">
-            <option v-for="sport in sports" v-bind:value="sport.id">{{sport.sport}}</option>
-        </select>
-        <br>
+        <div class="addEvent">
+            <b>Choose sport</b><br>
+            <select v-model="selectedSport">
+                <option v-for="sport in sports" v-bind:value="sport.id">{{sport.sport}}</option>
+            </select>
+            <br>
 
-        <b>Team</b>
-        <select v-model="selectedTeam1">
-            <option v-for="team in teams" v-bind:value="team.id">{{team.name}}</option>
-        </select>
+            <b>Team</b>
+            <select v-model="selectedTeam1">
+                <option v-for="team in teams" v-bind:value="team.id">{{team.name}}</option>
+            </select>
 
-        <b>    VS    </b>
+            <b>    VS    </b>
 
 
-        <b>Team</b>
-        <select v-model="selectedTeam2">
-            <option v-for="team in teams" v-bind:value="team.id">{{team.name}}</option>
-        </select>
-        <br>
-        <button @click="enter">Enter</button>
-        <br>
+            <b>Team</b>
+            <select v-model="selectedTeam2">
+                <option v-for="team in teams" v-bind:value="team.id">{{team.name}}</option>
+            </select>
+            <br>
+            <button @click="enter">Enter</button>
+            <br>
 
-        <b>Date</b><br>
-        <input type="date" v-model="date">
-
+            <b>Date</b><br>
+            <input type="date" v-model="date">
+            <br>
+            <b>Time</b><br>
+            <input type="time" v-model="date">
+            <br>
+        </div>
     </div>
 </template>
 
@@ -81,5 +86,9 @@
 </script>
 
 <style scoped>
+.addEvent {
+    width: 50%;
+    background: darkseagreen;
 
+}
 </style>
