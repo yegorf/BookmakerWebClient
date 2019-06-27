@@ -37,7 +37,7 @@
         async created() {
             axios.post('/users/getUser', null, {
                 params: {
-                    name: this.$store.state.user
+                    name: localStorage.getItem("user")
                 }
             }).then(res => {
                 this.user = res.data;
@@ -45,7 +45,7 @@
 
             axios.post('/bets/getUserBets', null, {
                 params: {
-                    name: this.$store.state.user
+                    name: localStorage.getItem("user")
                 }
             }).then(res => {
                this.bets = res.data;
@@ -53,7 +53,7 @@
 
             axios.post('/transactions/getByUser', null, {
                 params: {
-                    user: this.$store.state.user
+                    user: localStorage.getItem("user")
                 }
             }).then(res => {
                 this.transactions = res.data;

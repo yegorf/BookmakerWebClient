@@ -16,7 +16,6 @@
 
             <b>    VS    </b>
 
-
             <b>Team</b>
             <select v-model="selectedTeam2">
                 <option v-for="team in teams" v-bind:value="team.id">{{team.name}}</option>
@@ -31,6 +30,7 @@
             <b>Time</b><br>
             <input type="time" v-model="date">
             <br>
+
         </div>
     </div>
 </template>

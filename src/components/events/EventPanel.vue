@@ -1,5 +1,6 @@
 <template>
     <div id="panel">
+        <b>ACTUAL EVENTS</b><br>
         <Event v-for="event in events" :id="event.id" :event="event" />
     </div>
 </template>

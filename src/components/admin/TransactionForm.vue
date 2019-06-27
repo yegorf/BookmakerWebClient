@@ -1,8 +1,10 @@
 <template>
     <div>
+        <AdminMenu />
+
         <b>Select the user</b><br>
         <select v-model="userSelect">
-            <option v-for="user in users" v-bind:value="user.id">{{user.name}}</option>
+            <option v-for="user in users" v-bind:value="user.name">{{user.name}}</option>
         </select>
         <br>
         <b>Sum: </b><input type="text" v-model="sum">
@@ -12,9 +14,11 @@
 
 <script>
     import axios from 'axios';
+    import AdminMenu from "../menues/AdminMenu";
 
     export default {
         name: "TransactionForm",
+        components: {AdminMenu},
         data() {
             return {
                 users: [],

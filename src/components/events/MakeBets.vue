@@ -1,22 +1,48 @@
 <template>
     <div>
-        <b>Event</b>
-        {{this.$store.state.event}}
-        <div v-for="result in results">
-            <b>Expected result: </b>{{result.name}}<br>
-            <b>Total bets sum: </b>{{result.sum}}
+        <UserMenu />
+        <div class="betForm">
+            <div class="eventInfo">
+                <b>{{event.sport}}</b> <br>
+                <b>{{event.team1}} VS {{event.team2}}</b><br>
+                <b>{{event.date}}</b>
+            </div>
+
+            <div class="results">
+                <div v-for="result in results">
+                    <b>Expected result: </b>{{result.name}}<br>
+                    <b>Total bets sum: </b>{{result.sum}}
+                </div>
+            </div>
+
+            <div class="chooseForm">
+                <b>Choose result: </b>
+                <select v-model="result">
+                    <option v-for="result in results" v-bind:value="result.id">{{result.name}}</option>
+                </select><br>
+                <b>Bet sum: </b><input type="text" @change="sumChange" v-model="sum"><br>
+                <button @click="enter">Make bet</button>
+            </div>
+            <div class="div">
+
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios';
+    import UserMenu from "../menues/UserMenu";
 
     export default {
         name: "MakeBets",
+        components: {UserMenu},
         data() {
             return {
-                results: []
+                event: null,
+                results: [],
+                result: null,
+                sum: null
             }
         },
         async created() {
@@ -29,10 +55,49 @@
             }).then(res => {
                 this.results = res.data
             });
+
+            axios.post('/events/getEvent', null, {
+                params: {
+                    id: this.$store.state.event
+                }
+            }).then(res => {
+                this.event = res.data
+            });
+        },
+        methods: {
+            sumChange() {
+
+            },
+            enter() {
+                axios.post('/bets/addBet', null, {
+                    params: {
+                        username: localStorage.getItem("user"),
+                        sum: this.sum,
+                        eventResult: this.result
+                    }
+                })
+            }
         }
     }
 </script>
 
 <style scoped>
+.betForm {
+    background: #3cd070;
+}
+    .eventInfo {
+        background: mistyrose;
+    }
 
+    .chooseForm {
+        background: seagreen;
+        width: 50%;
+        float: left;
+    }
+
+    .results {
+        background: darkseagreen;
+        width: 50%;
+        float: left;
+    }
 </style>

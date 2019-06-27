@@ -30,13 +30,6 @@ export default new Vuex.Store({
         setEvent (state, event) {
             state.event = event;
         }
-    },
-
-    getters: {
-    },
-
-
-    actions: {
     }
 });
 
