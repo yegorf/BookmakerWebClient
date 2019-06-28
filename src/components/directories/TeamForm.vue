@@ -1,13 +1,13 @@
 <template>
     <div>
-        <AdminMenu />
+        <AdminMenu/>
         <div class="addForm">
             <b>Team name</b><br>
-            <input type="text" ref="team">
+            <input type="text" v-model="team">
             <br>
 
             <b>Some information</b><br>
-            <textarea ref="info"></textarea>
+            <textarea v-model="info"></textarea>
             <br>
             <button @click="enter">Save</button>
             <br>
@@ -33,7 +33,9 @@
         data() {
             return {
                 teams: [],
-                selectTeam: this
+                selectTeam: this,
+                info: null,
+                team: null
             }
         },
         async created() {
@@ -43,13 +45,10 @@
         },
         methods: {
             enter() {
-                const team = this.$refs.team.value;
-                const info = this.$refs.info.value;
-
                 axios.post('/directories/addTeam', null, {
                     params: {
-                        team,
-                        info
+                        team: this.team,
+                        info: this.info
                     }
                 })
             },
@@ -65,17 +64,18 @@
 </script>
 
 <style scoped>
-.addForm {
-    background: darkseagreen;
-    width: 40%;
-    margin-left: 5%;
-    float: left;
-}
-.removeForm {
-    background: lightgreen;
-    width: 40%;
-    margin-left: 10%;
-    margin-right: 5%;
-    float: left;
-}
+    .addForm {
+        background: darkseagreen;
+        width: 40%;
+        margin-left: 5%;
+        float: left;
+    }
+
+    .removeForm {
+        background: lightgreen;
+        width: 40%;
+        margin-left: 10%;
+        margin-right: 5%;
+        float: left;
+    }
 </style>

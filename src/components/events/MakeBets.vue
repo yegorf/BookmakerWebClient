@@ -1,6 +1,6 @@
 <template>
     <div>
-        <UserMenu />
+        <UserMenu/>
         <div class="betForm">
             <div class="eventInfo">
                 <b>{{event.sport}}</b> <br>
@@ -82,9 +82,10 @@
 </script>
 
 <style scoped>
-.betForm {
-    background: #3cd070;
-}
+    .betForm {
+        background: #3cd070;
+    }
+
     .eventInfo {
         background: mistyrose;
     }

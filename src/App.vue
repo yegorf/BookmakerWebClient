@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-      <router-view/>
-  </div>
+    <div id="app">
+        <router-view/>
+    </div>
 </template>
 
 <style>
@@ -13,13 +13,13 @@
 
 <script>
 
-  import StartPage from "./components/main_pages/StartPage";
+    import StartPage from "./components/main_pages/StartPage";
 
-  export default {
-      components: {StartPage},
-      async created() {
-          console.log(this.$store.state.user);
-          console.log(this.$store.state.access);
-      }
-  }
+    export default {
+        components: {StartPage},
+        async created() {
+            console.log(this.$store.state.user);
+            console.log(this.$store.state.access);
+        }
+    }
 </script>

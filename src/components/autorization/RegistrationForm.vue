@@ -1,14 +1,14 @@
 <template>
     <div>
-        <VisitorMenu />
-        <div class="registration" >
+        <VisitorMenu/>
+        <div class="registration">
             <b>Registration</b><br>
             <b>Username</b><br>
-            <input type="text" ref="usernameInput"><br>
+            <input type="text" v-model="username"><br>
             <b>Password</b><br>
-            <input type="text" ref="passwordInput"><br>
+            <input type="text" v-model="password"><br>
             <b>Email</b><br>
-            <input type="text" ref="emailInput"><br>
+            <input type="text" v-model="email"><br>
             <button @click="enter">Enter</button>
         </div>
     </div>
@@ -22,17 +22,20 @@
     export default {
         name: "RegistrationForm",
         components: {VisitorMenu, UserMenu},
+        data() {
+            return {
+                username: null,
+                password: null,
+                email: null
+            }
+        },
         methods: {
             enter() {
-                const username = this.$refs.usernameInput.value;
-                const password = this.$refs.passwordInput.value;
-                const email = this.$refs.emailInput.value;
-
                 axios.post('/users/addUser', null, {
-                    params : {
-                        username,
-                        password,
-                        email
+                    params: {
+                        username: this.username,
+                        password: this.password,
+                        email: this.email
                     }
                 }).then(res => {
                     alert(res.data);

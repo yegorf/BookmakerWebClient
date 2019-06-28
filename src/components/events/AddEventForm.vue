@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AdminMenu />
+        <AdminMenu/>
 
         <div class="addEvent">
             <b>Profit(%): </b><input type="range" min="0" max="100" v-model="profit">{{profit}}%<br>
@@ -15,7 +15,7 @@
                 <option v-for="team in teams" v-bind:value="team.id">{{team.name}}</option>
             </select>
 
-            <b>    VS    </b>
+            <b> VS </b>
 
             <b>Team</b>
             <select v-model="selectedTeam2">
@@ -45,7 +45,7 @@
         components: {AdminMenu},
         data: function () {
             return {
-                sports : null,
+                sports: null,
                 teams: null,
                 selectedSport: null,
                 selectedTeam1: null,
@@ -67,19 +67,12 @@
 
         methods: {
             enter() {
-                const sport = this.selectedSport;
-                const team1 = this.selectedTeam1;
-                const team2 = this.selectedTeam2;
-                const date = this.date;
-
-                console.log(sport);
-
                 axios.post('/events/addEvent', null, {
                     params: {
-                        sport,
-                        team1,
-                        team2,
-                        date,
+                        sport: this.selectedSport,
+                        team1: this.selectedTeam1,
+                        team2: this.selectedTeam2,
+                        date: this.date,
                         profit: this.profit
                     }
                 });
@@ -89,9 +82,9 @@
 </script>
 
 <style scoped>
-.addEvent {
-    width: 50%;
-    background: darkseagreen;
+    .addEvent {
+        width: 50%;
+        background: darkseagreen;
 
-}
+    }
 </style>

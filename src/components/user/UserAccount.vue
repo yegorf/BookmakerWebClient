@@ -1,10 +1,12 @@
 <template>
     <div>
-        <UserMenu />
+        <UserMenu/>
         <div class="personalData">
             <b>Personal data</b>
-            <div>Username: {{this.user.name}}</div><br>
-            <div>Email: {{this.user.email}}</div><br>
+            <div>Username: {{this.user.name}}</div>
+            <br>
+            <div>Email: {{this.user.email}}</div>
+            <br>
             <b>Balance: {{this.user.balance}}</b><br>
         </div>
         <div class="betsData">
@@ -48,7 +50,7 @@
                     name: localStorage.getItem("user")
                 }
             }).then(res => {
-               this.bets = res.data;
+                this.bets = res.data;
             });
 
             axios.post('/transactions/getByUser', null, {
@@ -63,11 +65,12 @@
 </script>
 
 <style scoped>
-.personalData {
-    width: 200px;
-    height: auto;
-    background: seagreen;
-}
+    .personalData {
+        width: 200px;
+        height: auto;
+        background: seagreen;
+    }
+
     .betsData {
         background: lightgreen;
         width: 30%;

@@ -16,22 +16,22 @@ import TransactionForm from "./components/admin/TransactionForm";
 Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {path: '/login', component: LoginForm},
-    {path: '/registration', component: RegistrationForm},
-    {path: '/', component: StartPage},
+    routes: [
+        {path: '/login', component: LoginForm},
+        {path: '/registration', component: RegistrationForm},
+        {path: '/', component: StartPage},
 
-    {path: '/sports', component: SportForm},
-    {path: '/teams', component: TeamForm},
+        {path: '/sports', component: SportForm},
+        {path: '/teams', component: TeamForm},
 
-    {path: '/events', component: AddEventForm},
-    {path: '/admin', component: StartPageAdmin},
-    {path: '/user', component: StartPageUser},
+        {path: '/events', component: AddEventForm},
+        {path: '/admin', component: StartPageAdmin},
+        {path: '/user', component: StartPageUser},
 
-    {path: '/users', component: UsersPanel},
+        {path: '/users', component: UsersPanel},
 
-    {path: '/userAccount', component: UserAccount},
-    {path: '/makingBets', component: MakeBets},
-    {path: '/transactions', component: TransactionForm}
-  ]
+        {path: '/userAccount', component: UserAccount},
+        {path: '/makingBets', component: MakeBets},
+        {path: '/transactions', component: TransactionForm}
+    ]
 })

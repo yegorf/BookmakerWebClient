@@ -1,9 +1,9 @@
 <template>
     <div>
-        <AdminMenu />
+        <AdminMenu/>
         <div class="addSport">
             <b>Sport name</b><br>
-            <input type="text" ref="sportInput">
+            <input type="text" v-model="sport">
             <br>
             <button @click="enter">Save</button>
             <br>
@@ -29,7 +29,8 @@
         data() {
             return {
                 sports: null,
-                selectSport: null
+                selectSport: null,
+                sport: null
             }
         },
         async created() {
@@ -38,10 +39,9 @@
         },
         methods: {
             enter() {
-                const sport = this.$refs.sportInput.value;
                 axios.post('/directories/addSport', null, {
-                    params : {
-                        sport
+                    params: {
+                        sport: this.sport
                     }
                 }).then(res => {
                     alert(res.data);
@@ -60,17 +60,18 @@
 </script>
 
 <style scoped>
-.addSport {
-    width: 40%;
-    background: darkseagreen;
-    float: left;
-    margin-left: 5%;
-}
-.deleteSport {
-    width: 40%;
-    background: lightgreen;
-    float: left;
-    margin-left: 10%;
-    margin-right: 5%;
-}
+    .addSport {
+        width: 40%;
+        background: darkseagreen;
+        float: left;
+        margin-left: 5%;
+    }
+
+    .deleteSport {
+        width: 40%;
+        background: lightgreen;
+        float: left;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
 </style>

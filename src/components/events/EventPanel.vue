@@ -1,7 +1,7 @@
 <template>
     <div id="panel">
         <b>ACTUAL EVENTS</b><br>
-        <Event v-for="event in events" :id="event.id" :event="event" />
+        <Event v-for="event in events" :id="event.id" :event="event"/>
     </div>
 </template>
 
@@ -20,9 +20,8 @@
         },
 
         async created() {
-            let kek = await axios.get('/events/getEvents');
-            this.events = kek.data;
-            console.log(this.events);
+            let eventsData = await axios.get('/events/getEvents');
+            this.events = eventsData.data;
         }
     }
 </script>

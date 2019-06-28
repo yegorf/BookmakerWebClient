@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AdminMenu />
+        <AdminMenu/>
 
         <b>Select the user</b><br>
         <select v-model="userSelect">
@@ -29,7 +29,6 @@
         async created() {
             const usersData = await axios.get('/users/getUsers');
             this.users = usersData.data;
-            console.log(this.users);
         },
         methods: {
             enter() {

@@ -2,9 +2,9 @@
     <div @click="choose">
         <div id="event">
             <router-link class="rl" to="/makingBets">
-                    {{event.sport}}<br>
-                    {{event.team1}} VS {{event.team2}} <br>
-                    {{event.date}}
+                {{event.sport}}<br>
+                {{event.team1}} VS {{event.team2}} <br>
+                {{event.date}}
             </router-link>
         </div>
     </div>
