@@ -3,6 +3,7 @@
         <AdminMenu />
 
         <div class="addEvent">
+            <b>Profit(%): </b><input type="range" min="0" max="100" v-model="profit">{{profit}}%<br>
             <b>Choose sport</b><br>
             <select v-model="selectedSport">
                 <option v-for="sport in sports" v-bind:value="sport.id">{{sport.sport}}</option>
@@ -49,7 +50,8 @@
                 selectedSport: null,
                 selectedTeam1: null,
                 selectedTeam2: null,
-                date: null
+                date: null,
+                profit: null
             }
         },
 
@@ -77,7 +79,8 @@
                         sport,
                         team1,
                         team2,
-                        date
+                        date,
+                        profit: this.profit
                     }
                 });
             }
