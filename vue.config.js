@@ -13,6 +13,6 @@ module.exports = {
             '': {
                 target: 'http://localhost:8080',
             },
-        },
+        }
     },
 };

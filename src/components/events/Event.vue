@@ -6,6 +6,7 @@
                 {{event.team1}} VS {{event.team2}} <br>
                 {{event.date}}
             </router-link>
+            <b>Status: {{event.active}}</b>
         </div>
     </div>
 </template>

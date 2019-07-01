@@ -50,7 +50,11 @@
                         team: this.team,
                         info: this.info
                     }
-                })
+                }).catch(function (error) {
+                    if(error.response) {
+                        alert(error.response.data.message);
+                    }
+                });
             },
             remove() {
                 axios.post('/directories/removeTeam', null, {

@@ -4,9 +4,9 @@
         <div class="login">
             <b>LOG IN</b><br>
             <b>Username</b><br>
-            <input type="text" v-model="username"><br>
+            <input type="text" v-model="username" id="username"><br>
             <b>Password</b><br>
-            <input type="text" v-model="password"><br>
+            <input type="text" v-model="password" id="password"><br>
             <button @click="enter">Enter</button>
             <br>
         </div>
@@ -32,7 +32,7 @@
             localStorage.setItem("access", null);
         },
         methods: {
-            enter() {
+             enter() {
                 axios.post('/users/login', null, {
                     params: {
                         username: this.username,
@@ -40,20 +40,20 @@
                     }
                 }).then(res => {
                     const user = res.data;
-                    if (user.message != null) {
-                        alert(user.message);
-                    } else {
-                        this.$store.commit("setUser", user.name);
-                        this.$store.commit("setAccess", user.admin);
+                    this.$store.commit("setUser", user.name);
+                    this.$store.commit("setAccess", user.admin);
 
-                        localStorage.setItem("user", user.name);
-                        localStorage.setItem("access", user.admin);
+                    localStorage.setItem("user", user.name);
+                    localStorage.setItem("access", user.admin);
 
-                        if (this.$store.state.access == '0') {
-                            this.$router.push({path: '/user'});
-                        } else if (this.$store.state.access == '1') {
-                            this.$router.push({path: '/admin'});
-                        }
+                    if (this.$store.state.access == 'USER') {
+                        this.$router.push({path: '/user'});
+                    } else if (this.$store.state.access == 'ADMIN') {
+                        this.$router.push({path: '/admin'});
+                    }
+                }).catch(function (error) {
+                    if (error.response) {
+                        alert(error.response.data.message)
                     }
                 });
             }

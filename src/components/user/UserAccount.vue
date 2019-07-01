@@ -7,15 +7,15 @@
             <br>
             <div>Email: {{this.user.email}}</div>
             <br>
-            <b>Balance: {{this.user.balance}}</b><br>
+            <b>Balance: {{this.user.balance}}$</b><br>
         </div>
         <div class="betsData">
             <b>Bets history</b><br>
-            <div v-for="bet in bets">{{bet.sum}} {{bet.coef}}<br></div>
+            <div v-for="bet in bets">{{bet.sum}}$ {{bet.coef}} - {{bet.status}}<br></div>
         </div>
         <div class="transactionsData">
             <b>Transactions history</b><br>
-            <div v-for="transaction in transactions">{{transaction.date}} - {{transaction.sum}}</div>
+            <div v-for="transaction in transactions">{{transaction.date}} - {{transaction.sum}}$</div>
         </div>
     </div>
 </template>

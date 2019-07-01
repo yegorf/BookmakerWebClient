@@ -19,6 +19,9 @@
                 <router-link class="rl" to="/events">Events</router-link>
             </li>
             <li>
+                <router-link class="rl" to="/results">Results</router-link>
+            </li>
+            <li>
                 <router-link class="rl" to="/users">Users</router-link>
             </li>
             <li>

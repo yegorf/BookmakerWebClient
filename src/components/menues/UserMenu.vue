@@ -5,7 +5,7 @@
                 <router-link class="rl" to="/user">Main</router-link>
             </li>
             <li>
-                <router-link class="rl" to="/directories">My bets</router-link>
+                <router-link class="rl" to="/bets">My bets</router-link>
             </li>
             <li>
                 <router-link class="rl" to="/userAccount">My account</router-link>

@@ -39,6 +39,10 @@
                     }
                 }).then(res => {
                     alert(res.data);
+                }).catch(function (error) {
+                    if (error.response) {
+                        alert(error.response.data.message)
+                    }
                 });
             }
         }
