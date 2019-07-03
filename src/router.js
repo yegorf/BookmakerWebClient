@@ -14,6 +14,7 @@ import MakeBets from "./components/events/MakeBets";
 import TransactionForm from "./components/admin/TransactionForm";
 import BetsPanel from "./components/user/BetsPanel";
 import EventResultsPanel from "./components/admin/EventResultsPanel";
+import RemindPassword from "./components/autorization/RemindPassword";
 
 Vue.use(Router);
 
@@ -36,6 +37,7 @@ export default new Router({
         {path: '/bets', component: BetsPanel},
         {path: '/userAccount', component: UserAccount},
         {path: '/makingBets', component: MakeBets},
-        {path: '/transactions', component: TransactionForm}
+        {path: '/transactions', component: TransactionForm},
+        {path: '/remindPassword', component: RemindPassword}
     ]
 })

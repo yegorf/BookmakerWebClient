@@ -2,7 +2,9 @@
     <div id="nav">
         <ul class="mainMenu">
             <li>
-                <router-link class="rl" to="/">Main</router-link>
+                <router-link class="rl" to="/">
+                    Main
+                </router-link>
             </li>
             <li>
                 <router-link class="rl" to="/login">Login</router-link>

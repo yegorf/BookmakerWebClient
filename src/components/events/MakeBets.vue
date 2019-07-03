@@ -11,7 +11,7 @@
             <div class="results">
                 <div v-for="result in results">
                     <b>Expected result: </b>{{result.name}}<br>
-                    <b>Total bets sum: </b>{{result.sum}}
+                    <b>Total bets sum: </b>{{result.sum}} {{result.percent}} %
                 </div>
             </div>
 
@@ -75,6 +75,8 @@
                         sum: this.sum,
                         eventResult: this.result
                     }
+                }).then(res => {
+                    alert(res.data);
                 })
             }
         }

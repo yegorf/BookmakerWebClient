@@ -28,7 +28,7 @@
 
 <style scoped>
     #panel {
-        background: coral;
+        background: #9fa6a2;
         width: 100%;
     }
 </style>

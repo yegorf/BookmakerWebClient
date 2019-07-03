@@ -17,7 +17,8 @@
         props: ['event'],
         methods: {
             choose() {
-                this.$store.commit('setEvent', this.event.id)
+                this.$store.commit('setEvent', this.event.id);
+                alert(this.event.id);
             }
         }
     }

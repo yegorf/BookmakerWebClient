@@ -9,6 +9,8 @@
             <input type="text" v-model="password" id="password"><br>
             <button @click="enter">Enter</button>
             <br>
+            <b>Forgot password?</b><br>
+            <router-link to="/remindPassword">Remind password</router-link>
         </div>
     </div>
 </template>
