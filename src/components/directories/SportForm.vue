@@ -69,6 +69,9 @@
         background: darkseagreen;
         float: left;
         margin-left: 5%;
+
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+        border-radius: 10px;
     }
 
     .deleteSport {
@@ -77,5 +80,8 @@
         float: left;
         margin-left: 10%;
         margin-right: 5%;
+
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+        border-radius: 10px;
     }
 </style>

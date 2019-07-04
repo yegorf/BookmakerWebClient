@@ -29,7 +29,10 @@
         width: 80%;
         background: lightgreen;
         margin-bottom: 20px;
-        padding-top: 20px;
         margin-left: 10%;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, .2);
+        border-radius: 20px;
+        text-align: center;
+
     }
 </style>

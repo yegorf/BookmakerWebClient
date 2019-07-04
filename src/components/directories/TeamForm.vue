@@ -73,6 +73,9 @@
         width: 40%;
         margin-left: 5%;
         float: left;
+
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+        border-radius: 10px;
     }
 
     .removeForm {
@@ -81,5 +84,8 @@
         margin-left: 10%;
         margin-right: 5%;
         float: left;
+
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+        border-radius: 10px;
     }
 </style>
