@@ -23,6 +23,7 @@
 </script>
 
 <style scoped>
+
     #nav {
         margin-bottom: 100px;
         background-color: #3cd070;

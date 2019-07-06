@@ -9,6 +9,11 @@
         background: #cfdfcf;
         font-family: Arial;
     }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
 </style>
 
 <script>

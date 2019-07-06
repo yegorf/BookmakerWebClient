@@ -11,7 +11,8 @@
             <div class="results">
                 <div v-for="result in results">
                     <b>Expected result: </b>{{result.name}}<br>
-                    <b>Total bets sum: </b>{{result.sum}} {{result.percent}} %
+                    <b>Total bets sum: </b>{{result.sum}} {{result.percent}} % <br>
+                    <b>Coefficient: </b>{{result.coef}}
                 </div>
             </div>
 
